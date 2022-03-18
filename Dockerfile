@@ -15,7 +15,7 @@ COPY repostats.py /
 COPY Pipfile /
 COPY Pipfile.lock /
 
-RUN pip install
+RUN pip install pipenv
 RUN pipenv install --deploy --ignore-pipfile
 
 ENTRYPOINT ["pipenv", "run", "python", "/main.py"]
