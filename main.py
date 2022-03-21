@@ -6,7 +6,7 @@ import requests
 
 
 def main():
-    if os.environ["REPOSITORY_NAME"] is not None:
+    if "REPOSITORY_NAME" in os.environ:
         repo_name = os.environ["REPOSITORY_NAME"]
     else:
         repo_name = os.environ["GITHUB_REPOSITORY"]
