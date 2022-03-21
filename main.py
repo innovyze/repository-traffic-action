@@ -6,7 +6,10 @@ import requests
 
 
 def main():
-    repo_name = os.environ["REPOSITORY_NAME"]
+    if os.environ["REPOSITORY_NAME"] is not None:
+        repo_name = os.environ["REPOSITORY_NAME"]
+    else:
+        repo_name = os.environ["GITHUB_REPOSITORY"]
     repo_stats = RepoStats(
         repo_name, os.environ["TRAFFIC_ACTION_TOKEN"])
 
